@@ -1,0 +1,118 @@
+.inputDecorator {
+  border-width: 1px;
+  width: 100% !important;
+  border-radius: 4px !important;
+  height: 45px;
+  outline: none;
+  background: var(--ccs-base-white);
+  border: 1px solid var(--ccs-base-grey);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+  font-family: WorkSans-Regular;
+  font-size: 15px;
+  color: var(--ccs-supporting-dark-grey);
+  letter-spacing: 0;
+  line-height: 20px;
+  padding: 0 20px;
+
+  &.password {
+    padding-right: 45px !important;
+  }
+}
+
+#signinLocationName {
+  font-size: 35px;
+  font-family: WorkSans-Bold;
+  font-weight: normal !important;
+  color: var(--ccs-color-title);
+}
+#signinSubscriberName {
+  font-size: 40px;
+  font-family: WorkSans-Bold;
+  color: var(--ccs-color-title);
+//  padding-top: 20px;
+//  padding-bottom: 20px;
+}
+.ccsSiteLabel {
+  margin-bottom: 14px;
+  font-family: WorkSans-Medium;
+  color: var(--ccs-color-descriptor);
+  font-size: 10px;
+}
+.iconZoom {
+    zoom: 2.0;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.required-error {
+  // border: 1px solid var(--ccs-color-negative);
+}
+
+.required {
+  padding-left: .15rem;
+}
+
+:host {
+  app-battery {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+label {
+  padding-bottom: 10px;
+  display: block;
+  font-weight: normal;
+  font-family: WorkSans-Regular;
+  font-size: 15px;
+  color: var(--ccs-color-form-prompt);
+  letter-spacing: 0;
+  line-height: 15px;
+
+  &.remember-me {
+    color: var(--ccs-supporting-medium-grey);
+    font-size: 16px;
+    font-family: WorkSans, Arial, sans-serif;
+  }
+}
+
+ion-content {
+  --padding-top: 20px;
+
+  .field-block {
+    margin-bottom: 15px;
+  }
+
+  ion-item {
+    --padding-start: 0;
+    --padding-bottom: 0;
+    --padding-top: 0;
+    --inner-padding-end: 0;
+
+    input {
+      outline: none;
+      background: var(--ccs-base-white);
+      border: 1px solid var(--ccs-base-grey);
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+      font-family: WorkSans-Regular;
+      font-size: 15px;
+      color: var(--ccs-supporting-dark-grey);
+      letter-spacing: 0;
+      line-height: 20px;
+      padding: 0 20px;
+    }
+  }
+
+  .passwordIcon {
+    position: absolute;
+    right: 12px;
+    align-self: baseline;
+  }
+}

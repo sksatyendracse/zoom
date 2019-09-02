@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar no-border color="primary">
+    <div class="header-container">
+      <app-battery [colorType]="batteryColorType" *ngIf="config.showBatteryLevel"></app-battery>
+      <div class="time" *ngIf="config.showTime && timeIsAvailable">{{currentTime}}</div>
+      <button *ngIf="!config.hideBackButton" [disabled]="config.disableBackButton" class="header-action back-button" (click)="back()">
+        <img src="assets/images/{{config.disableBackButton ? 'back_arrow_disabled.svg' : 'back_arrow.svg'}}">
+      </button>
+      <div *ngIf="config.showMainLogo" class="logo">
+        <img src="assets/images/logo.svg">
+      </div>
+      <button class="header-action menu" [disabled]="config.disableMenu" *ngIf="!config.hideMenu" (click)="goToSettings()">
+        <img src="assets/icons/{{config.disableMenu ? 'hamburger_green_disabled.svg' : 'hamburger_green.svg'}}">
+      </button>
+
+      <ion-title *ngIf="config.title">{{config.title}}</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>

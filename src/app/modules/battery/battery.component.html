@@ -1,0 +1,4 @@
+<div class="battery-status" *ngIf="isBatteryIndicatorAvailable && isShow">
+  <img [src]="batteryImg">
+  <div [class.charging]="isCharging" [class.low]="batteryLevel <= minBatLevel" [ngClass]="colorType" class="level">{{batteryLevel > minBatLevel ? batteryLevel + '%' : 'Low' }}</div>
+</div>

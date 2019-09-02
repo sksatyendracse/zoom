@@ -1,0 +1,36 @@
+:host {
+  .battery-status {
+    display: flex;
+    color: white;
+    align-items: center;
+
+    img {
+      width: 32.5px;
+      height: 18px;
+      margin-right: 6.5px;
+    }
+
+    .level {
+      font-family: WorkSans-Bold;
+      font-size: 12px;
+      letter-spacing: 0;
+
+      &.light {
+        color: white;
+      }
+
+      &.dark {
+        color: black;
+      }
+
+      &.charging {
+        color: var( --ccs-base-blue);
+      }
+
+      &.low {
+        color: red;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

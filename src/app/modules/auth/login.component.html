@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<ion-content class="ion-page-content">
+  <form [formGroup]="form" (keyup.enter)="onSubmit()" (ngSubmit)="onSubmit()">
+    <div *ngIf="subscriber.subInfo.subscriberID">
+      <div id='signinSubscriberName'>
+        <div *ngIf="subscriber.subInfo.logoPath">
+          <img width='70%' class='imgCenter' src="{{comms.serviceHost}}{{subscriber.subInfo.logoPath}}">
+        </div>
+        <div class='textCenter' *ngIf='!subscriber.subInfo.logoPath'>{{subscriber.subInfo.subscriberName}}</div>
+      </div>
+      <div *ngIf="subscriber.subInfo.locationName != ''" id='signinLocationInfo'>
+        <!-- <img src='assets/images/subscriberDivider.svg' class='imgCenter' width='145' /> -->
+        <div class='textCenter ccsSiteLabel'>LOCATION</div>
+        <div style='padding-bottom: 16px' class='textCenter' id='signinLocationName'>{{subscriber.subInfo.locationName}}</div>
+      </div>
+    </div>
+    <div class="field-block" *ngIf="!comms.usingGateway">
+      <label for="prefix">Company<span class='required'>*</span></label>
+      <ion-list lines="none" expand="block">
+        <input (keydown.space)="$event.preventDefault();" autocapitalize='none' class="inputDecorator" [ngClass]="{'required-error': isInvalid('prefix')}" formControlName="prefix"
+          [(ngModel)]="userModel.prefix" type="text">
+      </ion-list>
+    </div>
+
+    <div class="field-block">
+      <label for="username">Username<span class='required'>*</span></label>
+      <ion-list lines="none" expand="block">
+        <input (keydown.space)="$event.preventDefault();" class="inputDecorator" autocapitalize='none' [ngClass]="{'required-error': isInvalid('username')}" formControlName="username"
+               [(ngModel)]="userModel.UserName" type="text">
+      </ion-list>
+    </div>
+
+    <div class="field-block">
+      <label for="password">Password</label>
+      <ion-item lines="none" expand="block">
+        <input (keydown.space)="$event.preventDefault();" class="inputDecorator password" autocapitalize='none' formControlName="password" [(ngModel)]="userModel.Password" [type]="passwordType">
+        <ion-icon slot='end' [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+    </ion-item>
+    </div>
+
+    <ion-item lines="none" *ngIf="!isBlackview">
+      <ion-toggle color='secondary' formControlName='rememberMe' [(ngModel)]="userModel.remember"></ion-toggle>
+      <ion-label for="rememberMe" class="remember-me">Remember Me</ion-label>
+    </ion-item>
+
+    <ion-button [disabled]="isLoading" expand="block" color="secondary" type="submit">Sign In</ion-button>
+
+    <div>
+      <app-battery *ngIf="!isKeyVisible"></app-battery>
+    </div>
+
+  </form>
+
+</ion-content>

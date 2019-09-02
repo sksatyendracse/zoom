@@ -1,0 +1,112 @@
+ion-header {
+  z-index: 0;
+
+  ion-toolbar {
+    --min-height: var(--header-height);
+    --padding-bottom: 0;
+    --padding-top: 1px;
+    --padding-end: 0;
+    --padding-start: 0;
+  }
+
+  .header-container {
+    height: var(--header-height);
+
+    app-battery {
+      position: absolute;
+      padding-left: var(--content-padding);
+      padding-top: 23px;
+      padding-bottom: 22px;
+    }
+
+    .time {
+      position: absolute;
+      font-family: WorkSans-Bold;
+      font-size: 15px;
+      color: var(--ccs-base-white);
+      letter-spacing: 0;
+      line-height: 12px;
+      left: 20px;
+      top: 24px;
+    }
+
+    .header-action {
+      position: absolute;
+      background-color: rgba(black, 0.2);
+      width: var(--header-height);
+      height: var(--header-height);
+      top: 0;
+
+      &.back-button {
+        outline: none;
+        left: 0;
+        margin: 0;
+        padding: 0;
+
+        img {
+          width: 8px;
+          height: 12.1px;
+        }
+      }
+
+      &.menu {
+        height: var(--header-height);
+        padding: 0;
+        margin: 0;
+        width: var(--header-height);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        outline: none;
+
+        img {
+          width: 20px;
+          height: 12.1px;
+        }
+      }
+
+      .menu-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    .logo {
+      left: 20px;
+      position: absolute;
+      top: 15px;
+
+      img {
+        height: 32px;
+        width: 134px;
+      }
+    }
+
+    .message-counts {
+      display: flex;
+      position: absolute;
+      height: 100%;
+      align-items: center;
+
+      .message-item {
+        padding-left: 1rem;
+        padding-right: .5rem;
+        padding-bottom: .3rem;
+
+        &.disabled {
+          opacity: .1;
+        }
+      }
+    }
+
+    ion-title {
+      height: 100%;
+      text-align: center;
+      margin: 0 5rem;
+      font-size: 16px;
+      font-family: WorkSans-SemiBold !important;
+      font-weight: normal !important;
+    }
+  }
+}
