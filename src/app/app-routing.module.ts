@@ -31,8 +31,9 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./modules/tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
