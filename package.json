@@ -59,7 +59,7 @@
     "cordova-plugin-vibration": "^3.1.1",
     "cordova-plugin-zeroconf": "^1.4.0",
     "core-js": "^2.5.4",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "netmask": "^1.0.6",
     "rxjs": "~6.5.1",
     "rxjs-compat": "^6.5.2",
